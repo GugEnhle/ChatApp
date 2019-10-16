@@ -1,0 +1,36 @@
+  
+<ion-header>
+<ion-toolbar color="dark">
+<ion-title>Profile
+  <ion-buttons float-right>
+    <button ion-button (click)="update(userList)" class="editButton">Edit</button>
+    </ion-buttons>
+</ion-title>
+
+</ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div padding text-center>
+    <img src="{{photoURL}}">
+    <input type="file" (change)="upload($event)" />
+</div>
+
+<ion-item color="light">
+    <ion-label>Username:</ion-label>
+    {{userList?.displayName}}
+</ion-item>
+<ion-item color="light">
+    <ion-label>Age:</ion-label>
+    {{userList?.age}}
+</ion-item>
+<ion-item color="light">
+    <ion-label>Bio:</ion-label>
+    {{userList?.bio}}
+</ion-item>
+
+  <ion-button expand="block" shape="round" color="dark" (click)="logout()">Logout</ion-button>
+</ion-content>
+
+

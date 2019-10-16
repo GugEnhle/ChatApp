@@ -1,0 +1,57 @@
+<ion-header>
+        <ion-toolbar color="dark">
+            <ion-buttons slot="start">
+                <ion-back-button></ion-back-button>
+              </ion-buttons>
+          <ion-title>Contacts
+            <ion-buttons end float-right>
+                <button ion-button (click)="sendPicMsg()">
+                <ion-icon name="camera"></ion-icon>
+                </button>
+              </ion-buttons>
+          </ion-title>
+          
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-tabs>
+          <ion-tab-bar slot="bottom" color="light">
+              <ion-tab-button tab1="chats" routerLink="/chat">
+                  <ion-icon name="chatbubbles" color="dark"></ion-icon>
+                  <ion-label color="dark">Chat</ion-label>
+              </ion-tab-button>
+              <ion-tab-button tab2="profile" routerLink="/profile">
+                  <ion-icon name="contact" color="dark"></ion-icon>
+                  <ion-label color="dark">Profile</ion-label>
+              </ion-tab-button>
+              <ion-tab-button tab3="Channels" routerLink="/chat">
+                <ion-icon name="paper" color="dark"></ion-icon>
+                <ion-label color="dark">Contacts</ion-label>
+            </ion-tab-button>
+          </ion-tab-bar>
+      </ion-tabs>
+        <ion-list>
+            <ion-list>
+                <ion-item-sliding *ngFor="let key of users | async">
+                    <div *ngIf="key.uid != uid">
+                        <ion-item>
+                            <ion-avatar item-centre>
+                                <img src="{{key.photoURL}}">
+                            </ion-avatar> &nbsp;
+                            <h3>{{key.displayName}}</h3>
+                        </ion-item>
+                        <ion-item-options slide="item-centre">
+                            <button ion-button color="dark" (click)="message(key)">
+                                  <ion-icon name="person">
+                                  </ion-icon>
+                                  chat
+                                </button>
+                        </ion-item-options>
+                    </div>
+      
+                </ion-item-sliding>
+            </ion-list>
+        </ion-list>
+      
+      </ion-content>
+      

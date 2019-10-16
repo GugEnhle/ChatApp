@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title align="center" color="dark">Update</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background-image">
+    <ion-item>
+    <ion-label>Name:</ion-label>
+    <ion-input type="text" [(ngModel)]="User.displayName"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+    <ion-label>Age: </ion-label>
+    <ion-input type="text" [(ngModel)]="User.age"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Bio: </ion-label>
+    <ion-input type="text" [(ngModel)]="User.bio"></ion-input>
+    </ion-item>
+    <div class="bottom-button" margin text-center>
+    <ion-button color="dark" size="default" (click)="onUpdate(User, User.key)">Update</ion-button>
+    </div>
+    <br>
+    </ion-content>
